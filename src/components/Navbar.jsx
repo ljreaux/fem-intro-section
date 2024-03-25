@@ -6,7 +6,7 @@ import calendar from "../assets/icon-calendar.svg";
 import reminders from "../assets/icon-reminders.svg";
 import planning from "../assets/icon-planning.svg";
 import menuIcon from "../assets/icon-menu.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FeaturesNav from "./FeaturesNav";
 
 export default function Navbar() {
@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: "Planning", link: planning },
   ];
   const [openNav, setOpenNav] = useState({
+    main: false,
     features: false,
     company: false,
   });
@@ -29,9 +30,11 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div>
-        <img src={logo} alt="snap logo" />
-        <img src={menuIcon} alt="" />
+      <img src={logo} alt="snap logo" />
+      <div className="nav-content">
+        <button className="nav-button" onClick={() => mouseEvents("main")}>
+          <img src={menuIcon} alt="" />
+        </button>
         <ul className="nav-items">
           <li
             className="dropdown"
@@ -68,12 +71,13 @@ export default function Navbar() {
             <a href="">About</a>
           </li>
         </ul>
-      </div>
-      <div className="account-div">
-        <a href="">Login</a>
-        <a href="" className="register">
-          Register
-        </a>
+
+        <div className="account-div">
+          <a href="">Login</a>
+          <a href="" className="register">
+            Register
+          </a>
+        </div>
       </div>
     </nav>
   );

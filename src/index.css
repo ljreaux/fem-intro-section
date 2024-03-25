@@ -20,22 +20,28 @@ body {
   background-color: var(--clr-white);
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem;
+.nav-button {
+  display: none;
+  border: none;
+  background: none;
 }
 
-.navbar div {
+.navbar {
   display: flex;
+  align-items: center;
+  margin: 1rem;
+  width: 100%;
+}
+
+.nav-content {
+  display: flex;
+  width: 85%;
   justify-content: space-between;
-  place-items: center;
 }
 
 .nav-items {
   list-style: none;
-  color: var(--clr-black);
+  color: var(--clr-md-gray);
   display: flex;
   place-items: center;
   gap: 1rem;
@@ -47,6 +53,10 @@ body {
 }
 
 .account-div {
+  color: var(--clr-md-gray);
+  display: flex;
+  justify-content: end;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -159,5 +169,25 @@ h1 {
   }
   main img {
     grid-row: 1;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .nav-button {
+    display: block;
+    position: relative;
+  }
+
+  .nav-content {
+    width: 100%;
+    place-content: end;
+    margin: 1rem;
+  }
+
+  .nav-items,
+  .account-div {
+    display: none;
   }
 }

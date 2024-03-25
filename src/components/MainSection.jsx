@@ -1,4 +1,5 @@
 import hero from "../assets/image-hero-desktop.png";
+import mobileHero from "../assets/image-hero-mobile.png";
 import databiz from "../assets/client-databiz.svg";
 import audiophile from "../assets/client-audiophile.svg";
 import meet from "../assets/client-meet.svg";
@@ -30,7 +31,7 @@ export default function MainSection() {
           })}
         </div>
       </div>
-      <img src={hero} alt="desktop hero image" />
+      <img src={hero} srcSet={`${mobileHero} 500w, ${hero}`} alt="hero image" />
     </main>
   );
 }
