@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   font-size: 18px;
+  width: 100vw;
 }
 
 body {
@@ -149,4 +150,14 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 100vw;
+    place-items: center;
+  }
+  main img {
+    grid-row: 1;
+  }
 }

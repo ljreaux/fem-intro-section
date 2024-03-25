@@ -5,7 +5,9 @@ import todo from "../assets/icon-todo.svg";
 import calendar from "../assets/icon-calendar.svg";
 import reminders from "../assets/icon-reminders.svg";
 import planning from "../assets/icon-planning.svg";
+import menuIcon from "../assets/icon-menu.svg";
 import { useState, useEffect } from "react";
+import FeaturesNav from "./FeaturesNav";
 
 export default function Navbar() {
   const features = [
@@ -25,12 +27,11 @@ export default function Navbar() {
     });
   }
 
-  useEffect(() => console.log(openNav), [openNav]);
-
   return (
     <nav className="navbar">
       <div>
         <img src={logo} alt="snap logo" />
+        <img src={menuIcon} alt="" />
         <ul className="nav-items">
           <li
             className="dropdown"
@@ -39,16 +40,7 @@ export default function Navbar() {
           >
             <a href="">Features</a>
             <img src={openNav.features ? caretUp : caretDown} />
-            <ul className="features-nav">
-              {features.map((feature) => {
-                return (
-                  <li className="feature-links">
-                    <img src={feature.link} alt={feature.name} />
-                    <a href="">{feature.name}</a>
-                  </li>
-                );
-              })}
-            </ul>
+            <FeaturesNav features={features} />
           </li>
           <li
             className="dropdown"
@@ -58,9 +50,15 @@ export default function Navbar() {
             <a href="">Company</a>
             <img src={openNav.company ? caretUp : caretDown} />
             <ul className="company-nav">
-              <li>History</li>
-              <li>Our Team</li>
-              <li>Blog</li>
+              <li>
+                <a href="">History</a>
+              </li>
+              <li>
+                <a href="">Our Team</a>
+              </li>
+              <li>
+                <a href="">Blog</a>
+              </li>
             </ul>
           </li>
           <li>
